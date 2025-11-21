@@ -33,12 +33,35 @@ public class Member {
 		
 	}
 	
+	// A method that tries to borrow one book
 	public boolean borrowOne() {
-		return false;
+		if (!canBorrow()) {
+			return false;
+		}
+		
+		this.borrowedCount += 1;
+
+		this.numBorrows += 1;
+		this.sessionFees += 0.5f;
+
+		TotalRevenue += 0.5f;
+		TotalBorrows += 1;
+		
+		return true;
 	}
 	
+	// A method that tries to return one book
 	public boolean returnOne() {
-		return false;
+		if (!canReturn()) {
+			return false;
+		}
+		
+		this.borrowedCount -= 1;
+		this.numReturns += 1;
+		
+		TotalReturns += 1;
+		
+		return true;
 	}
 	
 	public void displayStatistics() {
