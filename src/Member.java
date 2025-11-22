@@ -1,4 +1,6 @@
-public class Member {
+package member;
+
+public class member {
 	private int id;
 	private String name;
 	private int borrowedCount;
@@ -15,7 +17,7 @@ public class Member {
 	public static int TotalReturns = 0;
 
 	// Constructor
-	public Member(int id, String name, int borrowedCount) {
+	public member(int id, String name, int borrowedCount) {
 		this.id = id;
 		this.name = name;
 		this.borrowedCount = borrowedCount;
@@ -29,8 +31,7 @@ public class Member {
 	private boolean canBorrow() {
 		if (borrowedCount < 5) {
 			return true;
-		} else {
-			System.out.println("You can't borrow more than 5 books.");
+		} else {	
 			return false;
 		}
 	}
@@ -39,11 +40,10 @@ public class Member {
 	private boolean canReturn() {
 		if (borrowedCount > 0) {
 			return true;
-		} else {
-			System.out.println("You don't have any borrowed books to return.");
+		} else 
 			return false;
 		}
-	}
+
 	
 	// A method that displays borrowed count
 	public void viewBorrowedCount() {
@@ -66,8 +66,6 @@ public class Member {
 
 		TotalRevenue += 0.5f;
 		TotalBorrows += 1;
-		
-		System.out.println("A book has been borrowed successfully.");
 		return true;
 	}
 	
@@ -81,8 +79,6 @@ public class Member {
 		this.numReturns += 1;
 		
 		TotalReturns += 1;
-		
-		System.out.println("A book has been returned successfully.");
 		return true;
 	}
 	
@@ -115,4 +111,5 @@ public class Member {
 	public int getBorrowedCount() {
 		return borrowedCount;
 	}
+
 }
