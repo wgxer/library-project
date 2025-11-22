@@ -19,28 +19,19 @@ public class Member {
 		this.id = id;
 		this.name = name;
 		this.borrowedCount = borrowedCount;
-		this.numViewBorrowed = 0;
-		this.numBorrows = 0;
-		this.numReturns = 0;
-		this.sessionFees = 0.0;
+		
+		this.reset();
 	}
 	
 	// A method to check if member can borrow (not more than 5)
 	private boolean canBorrow() {
-		if (borrowedCount < 5) {
-			return true;
-		} else {	
-			return false;
-		}
+		return borrowedCount < 5;
 	}
 	
 	// A method to check if member can return (must have at least 1 book)
 	private boolean canReturn() {
-		if (borrowedCount > 0) {
-			return true;
-		} else 
-			return false;
-		}
+		return borrowedCount > 0;
+	}
 
 	
 	// A method that displays borrowed count
@@ -86,7 +77,7 @@ public class Member {
 		System.out.println("- Times viewed borrowed books: " + numViewBorrowed);
 		System.out.println("- Books borrowed this session: " + numBorrows);
 		System.out.println("- Books returned this session: " + numReturns);
-		System.out.printf("- Total fees incurred: %.2f credits%n", sessionFees);
+		System.out.printf("- Total fees incurred: %.2f credits\n", sessionFees);
 	}
 	
 	// A method that resets the statistics
@@ -105,10 +96,4 @@ public class Member {
 	public String getName() {
 		return name;
 	}
-
-	public int getBorrowedCount() {
-		return borrowedCount;
-	}
-
-
 }
