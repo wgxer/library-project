@@ -7,8 +7,5 @@
 *.tar.gz
 *.rar
 
-# Eclipse project folders
-.settings
-.classpath
-.project
+# Eclipse compiled class directory
 bin
